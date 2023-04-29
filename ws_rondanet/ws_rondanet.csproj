@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsXML.cs" />
     <Compile Include="Connected Services\wsRondanet\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
