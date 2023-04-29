@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.rondanet.gs1uy.org/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="RondanetService" targetNamespace="http://ws.rondanet.gs1uy.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.rondanet.gs1uy.org/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="enviarAcuseReciboMensajes" type="tns:enviarAcuseReciboMensajes" />
+      <xs:element name="enviarAcuseReciboMensajesResponse" type="tns:enviarAcuseReciboMensajesResponse" />
+      <xs:element name="enviarMensajes" type="tns:enviarMensajes" />
+      <xs:element name="enviarMensajesResponse" type="tns:enviarMensajesResponse" />
+      <xs:element name="obtenerMensajes" type="tns:obtenerMensajes" />
+      <xs:element name="obtenerMensajesResponse" type="tns:obtenerMensajesResponse" />
+      <xs:complexType name="obtenerMensajes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usuario" type="xs:string" />
+          <xs:element minOccurs="0" name="clave" type="xs:string" />
+          <xs:element minOccurs="0" name="formato" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerMensajesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarAcuseReciboMensajes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usuario" type="xs:string" />
+          <xs:element minOccurs="0" name="clave" type="xs:string" />
+          <xs:element minOccurs="0" name="acuse" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarAcuseReciboMensajesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarMensajes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usuario" type="xs:string" />
+          <xs:element minOccurs="0" name="clave" type="xs:string" />
+          <xs:element minOccurs="0" name="mensajes" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarMensajesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerMensajesResponse">
+    <wsdl:part name="parameters" element="tns:obtenerMensajesResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviarMensajesResponse">
+    <wsdl:part name="parameters" element="tns:enviarMensajesResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerMensajes">
+    <wsdl:part name="parameters" element="tns:obtenerMensajes" />
+  </wsdl:message>
+  <wsdl:message name="enviarAcuseReciboMensajesResponse">
+    <wsdl:part name="parameters" element="tns:enviarAcuseReciboMensajesResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviarMensajes">
+    <wsdl:part name="parameters" element="tns:enviarMensajes" />
+  </wsdl:message>
+  <wsdl:message name="enviarAcuseReciboMensajes">
+    <wsdl:part name="parameters" element="tns:enviarAcuseReciboMensajes" />
+  </wsdl:message>
+  <wsdl:portType name="Rondanet">
+    <wsdl:operation name="obtenerMensajes">
+      <wsdl:input name="obtenerMensajes" message="tns:obtenerMensajes" />
+      <wsdl:output name="obtenerMensajesResponse" message="tns:obtenerMensajesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarAcuseReciboMensajes">
+      <wsdl:input name="enviarAcuseReciboMensajes" message="tns:enviarAcuseReciboMensajes" />
+      <wsdl:output name="enviarAcuseReciboMensajesResponse" message="tns:enviarAcuseReciboMensajesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajes">
+      <wsdl:input name="enviarMensajes" message="tns:enviarMensajes" />
+      <wsdl:output name="enviarMensajesResponse" message="tns:enviarMensajesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RondanetServiceSoapBinding" type="tns:Rondanet">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerMensajes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerMensajes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerMensajesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarAcuseReciboMensajes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="enviarAcuseReciboMensajes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="enviarAcuseReciboMensajesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensajes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="enviarMensajes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="enviarMensajesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RondanetService">
+    <wsdl:port name="RondanetPort" binding="tns:RondanetServiceSoapBinding">
+      <soap:address location="http://192.168.254.19:8080/RondanetWS/RondanetService/RondanetImplementation" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

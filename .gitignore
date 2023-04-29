@@ -1,0 +1,13 @@
+/.vs
+/**/debug/*.dll
+/**/TempPe/*.dll
+/**/*.pdb
+/**/*.b1s
+/**/*.exe
+/**/*.exe.config
+/**/*.cache
+/**/*.resources
+/**/debug/*.cs
+/**/debug/*.txt
+/**/debug/Elementos/Log*.txt
+/**/*.copycomplete
